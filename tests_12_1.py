@@ -3,6 +3,9 @@ import unittest
 
 class RunnerTest(unittest.TestCase):
 
+    is_frozen = False
+
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_walk(self):
         '''
         test_walk - метод, в котором создаётся объект класса Runner с произвольным именем.
@@ -14,6 +17,7 @@ class RunnerTest(unittest.TestCase):
             rn.walk()
         self.assertEqual(rn.distance, 50)
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run(self):
         '''
         test_run - метод, в котором создаётся объект класса Runner с произвольным именем.
@@ -25,6 +29,7 @@ class RunnerTest(unittest.TestCase):
             rn.run()
         self.assertEqual(rn.distance, 100)
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_challenge(self):
         '''
         test_challenge - метод в котором создаются 2 объекта класса Runner с произвольными именами.
